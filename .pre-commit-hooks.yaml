@@ -1,0 +1,7 @@
+- id: notebook-export
+  name: Export notebook to src modules
+  description: Export code from notebooks into Python modules.
+  entry: notebook-export
+  language: python
+  types: [jupyter]
+  require_serial: true

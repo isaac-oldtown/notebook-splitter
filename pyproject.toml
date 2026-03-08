@@ -1,0 +1,21 @@
+[project]
+name = "notebook-export"
+version = "0.1.0"
+description = "Export Python modules from notebooks"
+requires-python = ">=3.9"
+dependencies = [
+    "nbformat",
+]
+
+[project.scripts]
+notebook-export = "notebook_export.export:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
