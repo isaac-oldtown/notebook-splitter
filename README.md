@@ -40,12 +40,14 @@ print(add(2, 3))
 Generated structure:
 
 ```
-src/
-├── main.py
-└── math_utils.py
+├── src
+│   ├── lib
+│   │   ├── __init__.py
+│   │   ├── math_utils.py
+│   └── main.py
 ```
 
-The exporter analyzes your code and automatically adds required imports.
+The exporter analyzes your code and automatically adds required imports (only the **required** ones).
 
 ---
 
@@ -56,7 +58,7 @@ Add to `.pre-commit-config.yaml`:
 ```yaml
 repos:
   - repo: https://github.com/isaac-oldtown/notebook-export
-    rev: v0.1.0
+    rev: v0.2.0
     hooks:
       - id: notebook-export
 ```
@@ -77,18 +79,5 @@ Whenever the notebook changes, the modules are regenerated automatically.
 project/
 ├── notebooks/
 │   └── main.ipynb
-├── src/
 └── .pre-commit-config.yaml
 ```
-
----
-
-## Notes
-
-Before regenerating `src/`, the previous version is saved to:
-
-```
-_backup_src/
-```
-(you may want to add it to .gitignore)
-
